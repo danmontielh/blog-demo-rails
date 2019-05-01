@@ -33,9 +33,6 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-#Better erros
-gem 'better_errors', '~> 2.5', '>= 2.5.1'
-
 #Bulma CSS
 gem 'bulma-rails', '~> 0.7.4'
 
@@ -60,7 +57,9 @@ group :development do
   #Guard 
   gem 'guard', '~> 2.15'
   #reload
-  gem 'guard-livereload', '~> 2.5', '>= 2.5.2'
+  gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false
+  #Better erros
+gem 'better_errors', '~> 2.5', '>= 2.5.1'
 end
 
 group :test do
