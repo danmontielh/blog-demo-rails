@@ -1,4 +1,4 @@
-<%= content_for :page_title, 'Index' %>
+<%= content_for :page_title, 'Welcome to my Blog!' %>
 <div class="section">
   <div class="container">
     <% @post.each do |post| %>
@@ -11,9 +11,6 @@
           </div>
           <div class="content">
             <%= post.content %>
-          </div>
-          <div class="comment-count">
-            <span class="tag ls-rounded"> </span>
           </div>
         </div>
       </div>
