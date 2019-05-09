@@ -2,6 +2,13 @@
 <%= provide :author, "By: " + @post.user.username %>
 <div class="section">
   <div class="container">
+    <div class="content">
+      <div class="picture_cover">
+      <%= image_tag @post.cover_picture %>
+      </div>
+      
+      <%= @post.content %>
+    </div>
     <% if logged_in? %>
       <nav class="level">
         <div class="level-left">
@@ -20,9 +27,6 @@
       </nav>
       <hr />
     <% end %>
-    <div class="content">
-      <%= @post.content %>
-    </div>
   </div>
 </div>
 <section class="comments">
