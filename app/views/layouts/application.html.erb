@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    	<section class="hero is-primary is-medium">
+    	<section class="hero is-primary">
 	  <!-- Hero head: will stick at the top -->
 	  <div class="hero-head">
 	    <nav class="navbar">
@@ -25,7 +25,13 @@
 	        </div>
 	        <div id="navbarMenuHeroA" class="navbar-menu">
 	          <div class="navbar-end">
+						<% if logged_in? %>
 	            <%= link_to "Create New Post", new_post_path, class:"navbar-item" %>
+							<%= link_to "Log Out", logout_path, method: :delete, class:"navbar-item" %>
+						<% else %>
+							<%= link_to "Sign In", signin_path, class:"navbar-item" %>
+							<%= link_to "Log In", login_path, class:"navbar-item" %>
+						<% end %>
 	          </div>
 	        </div>
 	      </div>
@@ -35,9 +41,8 @@
 	  <!-- Hero content: will be in the middle -->
 	  <div class="hero-body">
 	    <div class="container has-text-centered">
-	      <h1 class="title">
-	        <%= yield :page_title %>
-	      </h1>
+	      <h1 class="title"><%= yield :page_title %></h1>
+				<p><%= yield :author %></p>
 	    </div>
 	  </div>
 	</section>

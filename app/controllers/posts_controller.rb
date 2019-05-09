@@ -41,7 +41,8 @@ class PostsController < ApplicationController
     private
 
     def post_params
-        params.require(:post).permit(:title, :content)
+        params[:post][:user_id] = session[:id]
+        params.require(:post).permit(:title, :content, :user_id)      
     end
 
     def find_post

@@ -3,6 +3,13 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments 
   end
+  resources :users, only: [:new, :create]
+
+  get "/signin", to: "users#new"
+  post "/signin", to: "users#create"
+  get "/login", to: "sessions#new"
+  post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
 
   root "posts#index"
 end
