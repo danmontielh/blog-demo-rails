@@ -1,5 +1,5 @@
 <%= content_for :page_title, @post.title %>
-<%= provide :author, "By: " + @post.user.username %>
+<%= provide :author, "By: #{@post.user.username}"%>
 <div class="section">
   <div class="container">
     <div class="content">
