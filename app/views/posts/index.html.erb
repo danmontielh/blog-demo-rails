@@ -12,7 +12,7 @@
             </div>
             <div class="content">
               <p><%= post.content %></p>
-              <p class="has-text-right bold"><%= link_to pluralize(post.comments.count, 'Comment', 'Comments'), post %></p>
+              <p class="has-text-right bold"><%= link_to pluralize(post.comments.count, 'Comment', 'Comments'), post_path(post, anchor: "comments") %></p>
             </div>
           </div>
       </div>
