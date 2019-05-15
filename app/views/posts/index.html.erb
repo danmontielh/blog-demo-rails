@@ -3,7 +3,7 @@
   <div class="container">
     <% @post.each do |post| %>
       <div class="card">
-          <%= link_to image_tag(post.cover_picture, :size => "600x600", :class => "img-preview"), post %>
+          <%= link_to image_tag(post.cover_picture, size: "600x600", class: "img-preview"), post %>
           <div class="card-content">
             <div class="media">
               <div class="media-content">
