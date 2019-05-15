@@ -9,7 +9,7 @@
       
       <%= @post.content %>
     </div>
-    <% if logged_in? %>
+    <% if logged_in? &&  current_user == @post.user %>
       <nav class="level">
         <div class="level-left">
           <p class="level-item">
@@ -33,7 +33,7 @@
 <div class="container">
   <h2 class="subtitle is-5"> <strong><%= @post.comments.count %> </strong> comments</h2>
   <%= render @post.comments %>
-  <% if logged_in? %>
+  <% if logged_in?%>
     <div class="comment-form">
       <hr />
       <h3 class="subtitle is-3"> Leave a reply</h3>

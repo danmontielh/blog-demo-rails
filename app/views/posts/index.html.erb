@@ -4,16 +4,19 @@
     <% @post.each do |post| %>
       <div class="card">
         <div class="card-content">
+          <%= link_to image_tag(post.cover_picture, :size => "600x600", :class => "img-preview"), post %>
           <div class="media">
             <div class="media-content">
-              <p class="title ls-4"> <%= link_to post.title ,post %> </p>
+              <p class="title ls-4"> <%= link_to post.title, post %> </p>
             </div>
           </div>
           <div class="content">
-            <%= post.content %>
+            <p><%= post.content %></p>
+            <p class="has-text-right bold"><%= pluralize(post.comments.count, 'Comment', 'Comments') %></p>
           </div>
         </div>
       </div>
     <% end %>
   </div>
 </div>
+

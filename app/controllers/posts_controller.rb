@@ -1,5 +1,8 @@
 class PostsController < ApplicationController
+    include SessionsHelper
+
     before_action :find_post, only: [:show, :edit, :update, :destroy] 
+    before_action :is_logged_in?, except: [:index, :show]
     
     def index
         @post = Post.all.order("created_at DESC")
@@ -49,6 +52,7 @@ class PostsController < ApplicationController
         @post = Post.find(params[:id])
     end
 
-
-
+    def is_logged_in?
+        redirect_to login_path unless logged_in?
+    end
 end

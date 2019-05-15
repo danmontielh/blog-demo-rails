@@ -13,4 +13,32 @@
  *= require_tree .
  *= require_self
  */
- @import "bulma";
+@import "bulma";
+
+.card {
+    width: 600px;
+    margin: 30px auto;
+    
+}
+
+.card-content {
+    width: 500px;
+    margin: 0 auto;
+}
+
+.img-preview {
+    margin: 10px 0;
+}
+
+.content p.bold {
+    font-weight: 700;
+}
+
+.hero-head {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    background-color: #00d1b2;
+}

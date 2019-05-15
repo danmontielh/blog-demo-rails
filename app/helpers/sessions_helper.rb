@@ -17,4 +17,10 @@ module SessionsHelper
         session.delete(:id)
         @current_user = nil
     end
+
+    def correct_user
+        @post = Post.find_by(user_id: session[:id])
+        if session[:id] 
+        end
+    end
 end
