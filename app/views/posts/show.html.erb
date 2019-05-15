@@ -29,9 +29,9 @@
     <% end %>
   </div>
 </div>
-<section class="comments">
+<section id="comments" class="comments">
 <div class="container">
-  <h2 class="subtitle is-5"> <strong><%= @post.comments.count %> </strong> comments</h2>
+  <h2 class="subtitle is-5"> <b><%= pluralize(@post.comments.count, "Comment", "Comments") %></b></h2>
   <%= render @post.comments %>
   <% if logged_in?%>
     <div class="comment-form">
