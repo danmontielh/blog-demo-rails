@@ -3,9 +3,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.1'
 gem 'bcrypt', '~> 3.1', '>= 3.1.12'
+gem 'active_storage_validations'
+gem "azure-storage", require: false
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
+gem 'friendly_id', '~> 5.2.4', require: "friendly_id"
 # Use sqlite3 as the database for Active Record
 group :development, :test do
   gem 'sqlite3' , '~> 1.3.13'
